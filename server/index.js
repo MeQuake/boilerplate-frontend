@@ -1,20 +1,11 @@
-var express = require('express')
-var app = express()
-
-var React = require('react');
-
-var App = require('../src/index.js');
-
+import express from 'express';
+import React from "react";
 import { renderToString } from 'react-dom/server';
+import site from '../src/index.js';
 
-
-
-/*var markup = React.renderComponentToString(
-    Item({ initialCount: 7 })
-);*/
-
+var app = express();
 app.get('/', function (req, res) {
-  const appString = renderToString(App.staticHtml.hello);
+  const appString = renderToString(site.hello);
   res.send(appString);
 })
 

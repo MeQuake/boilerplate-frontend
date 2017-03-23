@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 
-if(false) {
+if (typeof document === 'object') {
   render(<h1>Hello world!</h1>, document.getElementById('root'));
 }
 
-
-export const staticHtml = {
+const ssr = {
   hello:
-    <div>
-      Hello world from react2!
-    </div>
-}
+  (<div>
+    Hello world from react2!
+  </div>),
+};
+
+export default ssr;
