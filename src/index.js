@@ -1,5 +1,14 @@
-const app = document.createElement('main');
-const text = document.createTextNode('Hello world!');
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-app.appendChild(text);
-document.getElementById('root').appendChild(app);
+if(false) {
+  render(<h1>Hello world!</h1>, document.getElementById('root'));
+}
+
+
+export const staticHtml = {
+  hello:
+    <div>
+      Hello world from react2!
+    </div>
+}
