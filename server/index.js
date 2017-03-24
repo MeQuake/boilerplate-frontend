@@ -3,12 +3,21 @@ import React from "react";
 import { renderToString } from 'react-dom/server';
 import site from '../src/index.js';
 
-var app = express();
-app.get('/', function (req, res) {
-  const appString = renderToString(site.hello);
-  res.send(appString);
-})
+const fs = require('fs');
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
+fs.readFile('build/index.html', 'utf8', function (err, html) {
+  console.log(err);
+  console.log(html);
+  var app = express();
+
+  app.use(express.static(process.cwd() + '/build'));
+
+  app.get('/', function (req, res) {
+    const appString = renderToString(site.hello);
+    res.send(html);
+  })
+
+  app.listen(3000, function () {
+    console.log('SSR listening on port 3000!')
+  })
+});
