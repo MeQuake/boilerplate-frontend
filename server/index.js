@@ -11,7 +11,7 @@ fs.readFile('build/index.html', 'utf8', function (err, html) {
   jsdom.env(html, function(err, window) {
     // apply site transforms, an array of callbacks that contain
     var transformed;
-    site.forEach(function(transform){
+    site.transforms.forEach(function(transform){
       transformed = transform(window);
     });
     // start serving express
