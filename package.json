@@ -6,10 +6,15 @@
       "neutrino-preset-react"
     ]
   },
+  "watch": {
+    "ssr": "{src,test}/*.js"
+  },
   "scripts": {
     "start": "neutrino start",
     "build": "neutrino build",
-    "server": "babel-node -- server/index.js"
+    "server":"npm-watch",
+    "ssr": "neutrino build; babel-node server/index.js"
+
   },
   "dependencies": {
     "jsdom": "^9.12.0",

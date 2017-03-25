@@ -6,7 +6,7 @@ import jsdom from "jsdom";
 const fs = require('fs');
 
 // Load neutrino build with filesystem
-fs.readFile('build/index.html', 'utf8', function (err, html) {
+fs.readFile('./build/index.html', 'utf8', function (err, html) {
   // parse html file into a DOM to allow for selectors, append, prepend
   jsdom.env(html, function(err, window) {
     // apply site transforms, an array of callbacks that contain
