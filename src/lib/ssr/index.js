@@ -1,11 +1,9 @@
-/* eslint linebreak-style: ["error", "windows"]*/
-
 import { renderToString } from 'react-dom/server';
 
 const ssr = {
   transforms: [],
   insertBefore(jsx, selector) {
-    return function (window) {
+    return function transform(window) {
       // react render component
       const html = renderToString(jsx);
       // create dom node
