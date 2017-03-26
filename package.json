@@ -3,11 +3,9 @@
     "presets": [
       "neutrino-preset-karma",
       "neutrino-preset-airbnb-base",
-      "neutrino-preset-react"
+      "neutrino-preset-react",
+      "neutrino-preset-postcss"
     ]
-  },
-  "watch": {
-    "ssr": "{src,test}/*.js"
   },
   "scripts": {
     "start": "neutrino start",
@@ -15,17 +13,8 @@
     "server": "npm-watch",
     "ssr": "neutrino build; babel-node server/index.js"
   },
-  "dependencies": {
-    "jsdom": "^9.12.0",
-    "lodash": "^4.17.4",
-    "neutrino": "^4.3.1",
-    "neutrino-preset-airbnb-base": "^4.3.1",
-    "neutrino-preset-karma": "^4.2.0",
-    "neutrino-preset-react": "^4.2.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "suitcss": "^2.0.0",
-    "suitcss-preprocessor": "^3.0.1"
+  "watch": {
+    "ssr": "{src,test}/*.js"
   },
   "babel": {
     "presets": [
@@ -34,12 +23,34 @@
       "stage-0"
     ]
   },
+  "postcss": {
+    "parser": "sugarss",
+    "map": false,
+    "from": "src/*.css",
+    "to": "build/dest.css",
+    "plugins": {
+      "postcss-plugin": {}
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-es2017": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
     "express": "^4.15.2",
-    "express-react-views": "^0.10.2"
+    "express-react-views": "^0.10.2",
+    "jsdom": "^9.12.0",
+    "neutrino": "^4.3.1",
+    "neutrino-preset-airbnb-base": "^4.3.1",
+    "neutrino-preset-karma": "^4.2.0",
+    "neutrino-preset-postcss": "^1.0.0",
+    "neutrino-preset-react": "^4.2.3",
+    "suitcss": "^2.0.0",
+    "suitcss-preprocessor": "^3.0.1"
   }
 }
