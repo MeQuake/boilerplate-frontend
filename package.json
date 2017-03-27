@@ -52,6 +52,7 @@
     "neutrino-preset-karma": "^4.2.0",
     "neutrino-preset-postcss": "^1.0.0",
     "neutrino-preset-react": "^4.2.3",
+    "postcss": "^5.2.16",
     "suitcss": "^2.0.0",
     "suitcss-preprocessor": "^3.0.1"
   }
