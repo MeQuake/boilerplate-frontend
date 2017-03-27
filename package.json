@@ -27,10 +27,7 @@
     "parser": "sugarss",
     "map": false,
     "from": "src/*.css",
-    "to": "build/dest.css",
-    "plugins": {
-      "postcss-plugin": {}
-    }
+    "to": "build/dest.css"
   },
   "dependencies": {
     "htmltidy": "^0.0.6",
@@ -53,7 +50,30 @@
     "neutrino-preset-postcss": "^1.0.0",
     "neutrino-preset-react": "^4.2.3",
     "postcss": "^5.2.16",
+    "postcss-load-config": "^1.2.0",
     "suitcss": "^2.0.0",
     "suitcss-preprocessor": "^3.0.1"
+  },
+  "neutrino": {
+    "config": {
+      "module": {
+        "rule": {
+          "lint": {
+            "use": {
+              "eslint": {
+                "options": {
+                  "rules": {
+                    "linebreak-style": [
+                      "error",
+                      "windows"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
