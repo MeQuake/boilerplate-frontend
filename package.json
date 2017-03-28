@@ -30,6 +30,7 @@
     "to": "build/dest.css"
   },
   "dependencies": {
+    "babel-plugin-transform-assets": "^0.2.0",
     "htmltidy": "^0.0.6",
     "lodash": "^4.17.4",
     "npm-watch": "^0.1.8",

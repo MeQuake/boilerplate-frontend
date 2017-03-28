@@ -1,15 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 
-require('./index.css').basename(__dirname);
+require('./index.css');
 
-const Nav = React.createClass({
-  render() {
-    return (
-      <nav className="Nav">
-      </nav>
-    );
-  },
-});
+const Nav = <nav className="Nav"></nav>;
 
-module.exports = Nav, Nav.render;
+module.exports = Nav;
