@@ -4,8 +4,12 @@
     "react",
     "stage-0"
   ],
-  "plugins": [["transform-assets", {
-    "extensions": ["css"],
-    "name": "[name].[ext]?[sha512:hash:base64:7]",
-  }]]
+  "env": {
+    "node": {
+      "plugins": [["transform-assets", {
+        "extensions": ["css"],
+        "name": "[name].[ext]?[sha512:hash:base64:7]",
+      }]]
+    }
+  }
 }

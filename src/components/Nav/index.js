@@ -1,7 +1,8 @@
 import React from 'react';
 
-require('./index.css');
+import styles from './index.css';
 
-const Nav = <nav className="Nav"></nav>;
+const Nav = <nav className={styles.Nav}><ul><li>test</li></ul></nav>;
+
 
 module.exports = Nav;

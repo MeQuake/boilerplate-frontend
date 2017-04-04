@@ -11,7 +11,7 @@
     "start": "neutrino start",
     "build": "neutrino build",
     "server": "npm-watch",
-    "ssr": "neutrino build; babel-node server/index.js"
+    "ssr": "BABEL_ENV=node neutrino build; BABEL_ENV=node babel-node server/index.js"
   },
   "watch": {
     "ssr": "{src,test}/*.js"
