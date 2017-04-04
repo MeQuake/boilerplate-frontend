@@ -23,7 +23,7 @@ module.exports = neutrino => {
           // Hold off on propTypes for now
           'react/prop-types': 'off',
 		  // Change linebreak style depending which OS is being used
-		  "linebreak-style": ["error", process.env.OS === 'unix' ? "unix" : "windows"]
+		  "linebreak-style": ["error", process.env.OS === 'windows' ? "windows" : "unix"]
         }
       }
     }))

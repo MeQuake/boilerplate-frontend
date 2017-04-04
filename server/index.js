@@ -19,7 +19,6 @@ fs.readFile('./build/index.html', 'utf8', function (err, html) {
     var app = express();
 
     app.get('/', function (req, res) {
-      res.send(transformed.document.documentElement.innerHTML);
       tidy.tidy(transformed.document.documentElement.innerHTML, {doctype: 'html5',hideComments: false, indent: true},
       function(err, html) {
         res.send(html);
