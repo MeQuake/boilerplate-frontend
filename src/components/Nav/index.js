@@ -1,8 +1,14 @@
 import React from 'react';
-
 import styles from './index.css';
 
-const Nav = <nav className={styles.Nav}><ul><li>test</li></ul></nav>;
-
-
-module.exports = Nav;
+export default class WpConvert extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <nav className={styles.Nav}><ul><li>test</li></ul></nav>
+    );
+  }
+}
