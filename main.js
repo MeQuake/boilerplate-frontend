@@ -1,4 +1,4 @@
-const exec = require('child_process').exec;
+const execSync = require('child_process').execSync;
 const os = require('os');
 var buildCommand = "BABEL_ENV=node neutrino build";
 var serverCommand = "BABEL_ENV=node babel-node server/index.js";
@@ -10,11 +10,4 @@ if(os.platform() == 'win32') {
   commandDelimeter = '& ';
 }
 
-exec(buildCommand+commandDelimeter+serverCommand,
-    (error, stdout, stderr) => {
-        console.log(`stdout: ${stdout}`);
-        console.log(`stderr: ${stderr}`);
-        if (error !== null) {
-            console.log(`exec error: ${error}`);
-        }
-});
+execSync(buildCommand+commandDelimeter+serverCommand, {stdio:[0,1,2]});
